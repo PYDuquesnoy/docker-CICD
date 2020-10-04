@@ -1,0 +1,16 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build  -t pyduquesnoy/docker-cicd -f Dockerfile.dev .
+
+script:
+    #here we put the command to execute the test script
+    #if travis gets a return other than 0, it tells the test failed
+    #travis needs the test to finish. and by default, npm run test does not exit!
+    #CI=true, environment variable in docker for CI
+    #https://facebook.github.io/create-react-app/docs/running-tests#linux-macos-bash
+    #https://docs.docker.com/engine/reference/run/#env-environment-variables
+    - docker run -e CI=true pyduquesnoy/docker-cicd npm run test
