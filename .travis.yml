@@ -26,4 +26,5 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     on:
         branch: "main"
-
+    #Trying this to avoid error: Deploying application...No stash entries found.
+    edge: true
