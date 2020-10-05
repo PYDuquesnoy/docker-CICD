@@ -11,6 +11,8 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
           <br/>
           This is my first react app
+          <br/>
+          Changed on the features branch
         </p>
         <a
           className="App-link"
