@@ -20,7 +20,7 @@ deploy:
     region: eu-west-1
     app: "docker-cicd"
     env: "DockerCicd-env"
-    bucket_name: "elasticbeanstalk-eu-west-1-974893051747"
+    bucket_name: "docker-cicd"
     bucket_path: "docker-cicd"
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
