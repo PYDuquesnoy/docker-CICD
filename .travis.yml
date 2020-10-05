@@ -14,3 +14,16 @@ script:
     #https://facebook.github.io/create-react-app/docs/running-tests#linux-macos-bash
     #https://docs.docker.com/engine/reference/run/#env-environment-variables
     - docker run -e CI=true pyduquesnoy/docker-cicd npm run test
+
+deploy:
+    provider: elasticbeanstalk
+    region: eu-west-2
+    app: "docker-cicd"
+    env: "DockerCicd-env"
+    bucket_name: "elasticbeanstalk-eu-west-1-974893051747"
+    bucket_path: "docker-cicd"
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    on:
+        branch: "main"
+
